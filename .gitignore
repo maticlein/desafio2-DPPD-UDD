@@ -1,3 +1,4 @@
 .DS_Store
 modules/__pycache__
 venv_desafio2
+.streamlit/secrets.toml
