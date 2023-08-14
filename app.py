@@ -25,7 +25,7 @@ col2.image(logo, width = 200)
 st.header("Desafío 2 - Desarrollo de Proyectos y Productos de Datos")
 
 conn = st.experimental_connection('mysql', type='sql')
-df = conn.query('SELECT * from tb_registro;', ttl=600)
+df = conn.query('SELECT * from tb_registro;', ttl=10)
 
 sensor_temp = df[df["id_sensor"] == 1]
 sensor_hum = df[df["id_sensor"] == 2]
