@@ -8,6 +8,7 @@ from googleapiclient.errors import HttpError
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from google.oauth2.credentials import Credentials
+from streamlit_autorefresh import st_autorefresh
 
 favicon = Image.open('./img/logo_UDD.png')
 
@@ -23,6 +24,8 @@ logo = Image.open('./img/logo_UDD.png')
 col2.image(logo, width = 200)  
 
 st.header("Desafío 2 - Desarrollo de Proyectos y Productos de Datos")
+
+count = st_autorefresh(interval = 2000, debounce = True)
 
 conn = st.experimental_connection('mysql', type='sql')
 df = conn.query('SELECT * from tb_registro;', ttl=10)
